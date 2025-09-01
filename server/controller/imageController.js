@@ -1,5 +1,5 @@
 import axios from "axios";
-import userModel from "../models/usermodels.js";
+import userModel from "../models/userModels.js";
 import FormData from "form-data";
 
 
