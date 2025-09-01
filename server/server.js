@@ -24,14 +24,15 @@ app.use("/api/image", imageRouter);
 // Connect Database
 await connectDB();
 
+// --- THIS IS THE CORRECTED PART ---
 // React build serve
-const clientDistPath = path.join(__dirname, "client", "dist");
+const clientDistPath = path.join(__dirname, "..", "client", "dist");
 app.use(express.static(clientDistPath));
 
-// ✅ Fixed fallback route (avoid path-to-regexp error)
+// Fixed fallback route (avoid path-to-regexp error)
 app.get(/^\/(?!api).*/, (req, res) => {
   res.sendFile(path.join(clientDistPath, "index.html"));
 });
 
-// Start server
-app.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));
+
+app.listen(PORT, () => console.log(` Server running on port ${PORT}`));
