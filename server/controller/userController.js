@@ -1,4 +1,4 @@
-import userModel from "../models/usermodels.js";
+import userModel from "../models/userModels.js";
 import bcrypt from 'bcrypt';
 import jwt from "jsonwebtoken";
 import razorpay from 'razorpay';
