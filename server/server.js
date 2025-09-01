@@ -24,12 +24,12 @@ app.use("/api/image", imageRouter);
 // Connect Database
 await connectDB();
 
-// ✅ Correct path for React build
+// React build serve
 const clientDistPath = path.join(__dirname, "client", "dist");
 app.use(express.static(clientDistPath));
 
-// ✅ Fallback for React Router
-app.get("*", (req, res) => {
+// ✅ Fixed fallback route (avoid path-to-regexp error)
+app.get(/^\/(?!api).*/, (req, res) => {
   res.sendFile(path.join(clientDistPath, "index.html"));
 });
 
