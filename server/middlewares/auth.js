@@ -12,7 +12,7 @@ const userAuth = (req, res, next) => {
 
         if (tokenDecode.id) {
             req.userId = tokenDecode.id;
-
+            
         } else {
             return res.json({ success: false, message: 'Not Authorized. Login Again' });
         }

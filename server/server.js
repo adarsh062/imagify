@@ -24,7 +24,6 @@ app.use("/api/image", imageRouter);
 // Connect Database
 await connectDB();
 
-// --- THIS IS THE CORRECTED PART ---
 // React build serve
 const clientDistPath = path.join(__dirname, "..", "client", "dist");
 app.use(express.static(clientDistPath));
